@@ -10,6 +10,10 @@
 #  updated_at    :datetime         not null
 #
 class Course < ApplicationRecord
+
+    # a Course will have many users/user
+    #  Has many Users thru Enrollment table
+    # via course_id
     has_many :user,
         primary_key: :id,
         foreign_key: :course_id,

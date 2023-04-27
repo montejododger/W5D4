@@ -14,13 +14,12 @@ class Course < ApplicationRecord
     # a Course will have many users/user
     #  Has many Users thru Enrollment table
     # via course_id
-    has_many :enrollments,
+    has_many :sign_ups,
         primary_key: :id,
         foreign_key: :course_id,
         class_name: :Enrollment
 
-    has_many :enrolled_courses 
-        has_many :enrollments,
-        through: :enrolled_courses
-
+    has_many :students,
+        through: :sign_ups,
+        source: :student
 end

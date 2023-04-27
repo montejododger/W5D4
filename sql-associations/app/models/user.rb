@@ -12,12 +12,14 @@ class User < ApplicationRecord
     # student will be enrolled in many courses
     # via Enrollment table/class
     has_many :enrollments,
-        primary_key: :id,
+        # primary_key: :id,
         foreign_key: :student_id,
         class_name: :Enrollment
 
     #through: find courses each student is enrolled in
-    has_many :enrolled_courses
-        has_many :courses, 
-        through: :enrolled_courses
+    has_many :enrolled_courses,
+        through: :enrollments, 
+        source: :course
+        
+
 end

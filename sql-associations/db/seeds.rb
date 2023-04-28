@@ -31,7 +31,7 @@ ActiveRecord::Base.transaction do
 
   course1 = Course.create!(name: 'Ruby 101', instructor_id: user5.id)
   course2 = Course.create!(name: 'Ruby 102', instructor_id: user5.id, prereq_id: course1.id)
-
+  # coures3 = Course.create!(name: 'Ruby for Beginners', instructor: User.second)
   Enrollment.create!(student_id: user3.id, course_id: course1.id)
   Enrollment.create!(student_id: user4.id, course_id: course1.id)
   Enrollment.create!(student_id: user1.id, course_id: course2.id)

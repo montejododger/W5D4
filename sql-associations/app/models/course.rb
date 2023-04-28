@@ -28,6 +28,8 @@ class Course < ApplicationRecord
         primary_key: :prereq_id,
         foreign_key: :id,
         class_name: :Course 
+
+    
     
     
 end
